@@ -22,9 +22,9 @@ docker run --rm kaczmarj/neurodocker:master generate -b neurodebian:stretch-non-
 --instruction "RUN bash -c \"source activate neuro && jupyter nbextension enable --py --sys-prefix widgetsnbextension && jupyter nbextension enable --py --sys-prefix ipyvolume && conda install -yq bokeh scikit-image traits \" " \
 --instruction "RUN bash -c \"source activate neuro && pip install --upgrade https://github.com/nipy/nipype/tarball/master https://github.com/INCF/pybids/archive/master.zip nipy duecredit \" " \
 --workdir /home/neuro \
---no-check-urls > /Users/peerherholz/google_drive/Github/data_fusion_eeg_fmri/docker_files/generated.Dockerfile
+--no-check-urls > /docker_files/generated.Dockerfile
 
-cd /Users/peerherholz/google_drive/Github/data_fusion_eeg_fmri/docker_files/
+cd /docker_files/
 
 # Build Docker image using the saved Dockerfile.
-docker build -t eeg_fmri_fusion -f generated.Dockerfile /Users/peerherholz/google_drive/Github/data_fusion_eeg_fmri/docker_files/
+docker build -t eeg_fmri_fusion -f generated.Dockerfile /docker_files/
